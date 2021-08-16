@@ -5,7 +5,7 @@ var logger = require("morgan");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const DEFAULT_PORT = process.env.PORT ||6420;
-const port = DEFAULT_PORT;
+const port = process.env.PORT ||6420;
 
 //Rutas
 var dataRouter = require("./routes/data");
