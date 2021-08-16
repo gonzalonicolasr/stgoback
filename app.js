@@ -4,7 +4,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const DEFAULT_PORT = 6420;
+const DEFAULT_PORT = process.env.PORT ||6420;
 const port = DEFAULT_PORT;
 
 //Rutas
