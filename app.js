@@ -47,7 +47,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //Endpoints
-app.use("/api", dataRouter);
+app.use("/api/", dataRouter);
 
 app.listen(port);
 console.log("Server iniciado en puerto: " + port + "...");
