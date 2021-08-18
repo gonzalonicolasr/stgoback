@@ -12,7 +12,7 @@ var fetch = require("node-fetch");
  *       - in: path
  *         name: url
  *         required: true
- *         description: Url sin HTTPS para enviar por el endpoint y retornar el json
+ *         description: Url para enviar por el endpoint y retornar el json
  *         schema:
  *           type: string
  *     responses:
