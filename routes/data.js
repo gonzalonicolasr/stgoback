@@ -2,29 +2,12 @@ var express = require("express");
 var router = express.Router();
 var request = require("request");
 
-/**
- * @swagger
- * /api/{url}:
- *   get:
- *     summary: Retrieve a single JSONPlaceholder user.
- *     description: utilizado para obtener todas la informacion de la cuenta steam
- *     parameters:
- *       - in: path
- *         name: url
- *         required: true
- *         description: Url sin HTTPS para enviar por el endpoint y retornar el json
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         ...
- */
-router.get("/*", function (req, res, next) {
-  var url = req.params[0];
+router.get("/:tagId", function (req, res, next) {
+  var url = req.params.tagId;
 
   request(
     {
-      uri: "http://" + url,
+      uri: "https://" + url,
     },
     function (error, response, body) {
       var obj = {};

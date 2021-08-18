@@ -4,9 +4,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const port = process.env.PORT || 6420;
+const port = process.env.PORT || 8080;
 
-//Rutas
 var dataRouter = require("./routes/data");
 var app = express();
 //Extended swagger docu
@@ -20,7 +19,7 @@ const swaggerOptions = {
         name: "Gonzalo Rocca",
         email: "gonn.nicolas@gmail.com",
       },
-      servers: ["http://localhost:6420"],
+      servers: ["http://localhost:8080"],
     },
   },
   // ['.routes/*.js']
