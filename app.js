@@ -4,7 +4,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 
 var dataRouter = require("./routes/data");
 var app = express();
