@@ -4,7 +4,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8686;
 
 var dataRouter = require("./routes/data");
 var app = express();
@@ -41,7 +41,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

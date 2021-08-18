@@ -1,20 +1,16 @@
 var express = require("express");
 var router = express.Router();
 var request = require("request");
+var fetch = require("node-fetch");
 
-router.get("/:tagId", function (req, res, next) {
-  var url = req.params.tagId;
-
-  request(
-    {
-      uri: "https://" + url,
-    },
-    function (error, response, body) {
-      var obj = {};
-      obj = body;
-      res.status(200).send(body);
-    }
-  );
+router.get("/", async function (req, res, next) {
+  let response = await getDataSteam(req.query.url);
+  res.status(200).send(response);
 });
-
+async function getDataSteam(url) {
+  console.log(url);
+  const weather = await fetch(url);
+  let response = await weather.json();
+  return response;
+}
 module.exports = router;
